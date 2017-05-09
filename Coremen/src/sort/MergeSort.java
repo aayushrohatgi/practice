@@ -1,3 +1,5 @@
+package sort;
+
 public class MergeSort extends ListArray {
 
 	public static void main(String[] args) {

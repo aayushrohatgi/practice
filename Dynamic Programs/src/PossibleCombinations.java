@@ -4,6 +4,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Generates all possible combinations of numbers using any number of digits of a given number
+ * 
+ * @author aayushrohatgi
+ *
+ */
 public class PossibleCombinations {
 
 	private int digitCounts[];
