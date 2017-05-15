@@ -1,0 +1,24 @@
+package junit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	// naming convention test<what is tested>_<condition tested>
+	
+	@Test
+	public void testTruncateAInFirst2Positions() {
+		StringHelper helper = new StringHelper();
+		assertEquals("BCD", helper.truncateAInFirst2Positions("ABCD"));
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+	}
+
+	// return type for test method must always be public and void
+	
+	@Test
+	public void test2() {
+		
+	}
+}

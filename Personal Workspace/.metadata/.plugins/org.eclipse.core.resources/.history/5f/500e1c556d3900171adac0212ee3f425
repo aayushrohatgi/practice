@@ -1,0 +1,39 @@
+package junit;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+
+public class ArrayCompareTest {
+
+	@Test
+	public void testArraySort_RandomArray() {
+		int[] numbers = { 12, 4, 3, 14 };
+		int[] expected = { 3, 4, 12, 14 };
+		Arrays.sort(numbers);
+
+		// checks if they are actually references to same object
+		// assertEquals(expected, numbers);
+
+		assertArrayEquals(expected, numbers);
+	}
+
+	// This expects null pointer exception
+	// Fails if null pointer exception is not thrown
+	@Test(expected = NullPointerException.class)
+	public void testArraySort_NullArray() {
+		int[] numbers = null;
+		Arrays.sort(numbers);
+	}
+	
+	@Test(timeout=1000)
+	public void testSort_Performance() {
+		int[] array = new int[1000000];
+		for (int i = 1000000; i > 0; i++) {
+			array[0] = i;
+			Arrays.sort(array);
+		}
+	}
+}

@@ -1,0 +1,50 @@
+package junit;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	// naming convention test<what is tested>_<condition tested>
+
+	private static StringHelper helper;
+
+	@BeforeClass
+	public static void initialize() {
+		helper = new StringHelper();
+	}
+
+	@Test
+	public void testTruncateAInFirst2Positions_AinFirstPosition() {
+		assertEquals("BCD", helper.truncateAInFirst2Positions("ABCD"));
+	}
+
+	// return type for test method must always be public and void
+	// empty method always pass - absense of failure is success
+
+	@Test
+	public void testTruncateAInFirst2Positions2_AinFirst2Positions() {
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+	}
+
+	@Test
+	public void testAreFirstAndLastTwoCharactersSame_BasicFailureScenerio() {
+		// assertEquals(Boolean.FALSE,
+		// helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+
+		// This message is displayed as assertion error
+		// assertFalse("First and Last strings are not same", true);
+	}
+
+	@Test
+	public void testAreFirstAndLastTwoCharactersSame_BasicPassingScenerio() {
+		// assertEquals(Boolean.TRUE,
+		// helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+		assertTrue(helper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+	}
+}

@@ -1,0 +1,16 @@
+package junit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void testTruncateAInFirst2Positions() {
+		StringHelper helper = new StringHelper();
+		assertEquals("BCD", helper.truncateAInFirst2Positions("ABCD"));
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));
+	}
+
+}

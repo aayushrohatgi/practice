@@ -1,0 +1,37 @@
+package junit;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	// naming convention test<what is tested>_<condition tested>
+	
+	private StringHelper helper;
+	
+	@Before
+	public void initialize() {
+		helper = new StringHelper();		
+	}
+	
+	@Test
+	public void testTruncateAInFirst2Positions_AinFirstPosition() {
+		assertEquals("BCD", helper.truncateAInFirst2Positions("ABCD"));
+	}
+
+	// return type for test method must always be public and void
+	// empty method always pass - absense of failure is success
+	
+	@Test
+	public void testTruncateAInFirst2Positions2_AinFirst2Positions() {
+		assertEquals("CD", helper.truncateAInFirst2Positions("AACD"));		
+	}
+	
+	@Test
+	public void testAreFirstAndLastPositionsSame_BasicFalseScenerio() {
+		assertEquals(Boolean.FALSE, helper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+	}
+}
